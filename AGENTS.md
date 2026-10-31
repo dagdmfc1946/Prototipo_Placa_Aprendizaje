@@ -4,7 +4,7 @@
 
 - Seguir `tasks/plan.md`; estado de tareas en `tasks/todo.md` y resultados en `docs/bitacora.md`.
 - El usuario solicita explícitamente Agent Skills durante el desarrollo. Consultar `using-agent-skills` y aplicar las skills pertinentes a la etapa, informando cuáles se usan. No cargar todas las skills por defecto.
-- El desarrollo se realiza componente por componente, revisado con el usuario; no implementar todos los drivers por anticipado. La publicación en `dev` fue autorizada el 2026-10-31. La siguiente práctica propuesta es DHT11 + OLED + MicroSD, tras revisar ejemplos y conexiones.
+- El desarrollo se realiza componente por componente, revisado con el usuario; no implementar todos los drivers por anticipado. La publicación en `dev` fue autorizada el 2026-10-31. Práctica activa: P17a MicroSD independiente, compilada para core 3.3.12 y pendiente de validación física. Integrar DHT11/OLED después de revisar ese resultado; ver ficha P17a.
 - Revisar scripts aportados antes de reemplazarlos o reorganizarlos. Preservar trabajo y archivos ajenos al incremento.
 
 ## Desarrollo incremental

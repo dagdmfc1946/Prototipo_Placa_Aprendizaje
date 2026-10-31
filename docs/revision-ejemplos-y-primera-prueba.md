@@ -1,6 +1,6 @@
 # Revisión de referencias y preparación DHT11 + OLED + MicroSD
 
-Fecha: 2026-10-31. Estado: revisión de ejemplos y propuesta de prueba; sin firmware nuevo, compilación ni comprobación física.
+Fecha: 2026-10-31. Revisión previa a implementación. Continuación: [P17a MicroSD](practicas/P17a-microsd.md), ya implementada y compilada; pendiente de comprobación física. La integración DHT11/OLED sigue propuesta.
 
 ## Referencias locales revisadas
 

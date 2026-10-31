@@ -56,3 +56,13 @@ Fechas en America/Bogota. Registrar únicamente trabajo realizado; separar propu
 - Preparada propuesta `.h`/`.cpp` por componente y secuencia DHT por consola → OLED → SD sola → CSV integrado. Documento: `docs/revision-ejemplos-y-primera-prueba.md`.
 - No se encontró `examples/TemHum_IA_resumen_chat.md`; pendiente revisión de ese resumen específico.
 - No hay firmware nuevo, compilación ni pruebas físicas realizadas. Pendientes conexiones actuales, identificación de MicroSD y versión del core para preparar el primer sketch.
+
+## 2026-10-31 — P17a: primer incremento MicroSD
+
+- Usuario confirma DATA DHT11 en GPIO4 y Arduino-ESP32 3.3.12 mediante captura. Revisado su ejemplo OLED: SSD1306, 128×64, dirección 0x3C, SDA21/SCL22.
+- Identificado enlace de módulo TARUSD-CN-03. La ficha indexada describe un socket de 18×18 mm; no publica esquema ni regulación. La tabla de conexión se limita al adaptador directo de 3,3 V descrito en el plan original y requiere cotejo con la unidad.
+- Preparados `Config.h`, `MicroSd.h` y `MicroSd.cpp`; `.ino` coordina solamente la prueba SD. CS provisional GPIO13, SCK18, MISO19, MOSI23, frecuencia 1 MHz. No conectar buzzer en GPIO13 durante esta práctica.
+- Por arranque: añadir 46 bytes en `/prueba_sd.txt`, cerrar, reabrir y comparar los bytes nuevos; informar errores y desmontar. No se borra el archivo ni se solicita formateo automático.
+- Compilación inicial bloqueada al iniciar compilador dentro del sandbox (WinAPI #623). Repetida con permisos del entorno: exit code 0, Arduino CLI 1.5.1, core 3.3.12, FQBN `esp32:esp32:esp32`, warnings all. Programa 329446 bytes (25 %); globales 22680 bytes (6 %).
+- Verificada identidad de los archivos de firmware compilados con los guardados en el repositorio. No se cargó firmware ni se realizaron pruebas físicas.
+- Pendientes: salida de Monitor Serie a 115200, tarjeta/capacidad/formato, persistencia al reinicio y fallo explícito sin tarjeta. P17 global sigue abierta; esquemático y registro DHT11/CSV se harán tras validar este incremento.

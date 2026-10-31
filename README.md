@@ -4,10 +4,11 @@ Desarrollo gradual de una plataforma educativa con ESP-WROOM-32 DevKit de 30 pin
 
 ## Estado
 
-Planificación inicial. `esp32_Project/esp32_Project.ino` contiene la plantilla original; todavía no hay firmware funcional validado ni pinout definitivo. Los ejemplos previos del usuario se revisarán antes de implementar las prácticas.
+Primera práctica implementada y compilada: **P17a, MicroSD independiente**. El sketch agrega y verifica un registro por arranque. Objetivo: Arduino-ESP32 3.3.12, ESP32 Dev Module. Pendiente de prueba física; pinout provisional. DHT11 y OLED se integrarán después de validar esta etapa.
 
 ## Documentación
 
+- [Prueba P17a: MicroSD](docs/practicas/P17a-microsd.md): cableado, carga, resultados esperados y verificación de compilación.
 - [Plan de trabajo](tasks/plan.md): alcance, secuencia, pendientes y fuentes.
 - [Seguimiento](tasks/todo.md): prácticas y puntos de revisión.
 - [Bitácora](docs/bitacora.md): trabajo realizado y plantilla de registro.
@@ -20,14 +21,14 @@ Identificar módulo → revisar ejemplo existente → preparar un script → com
 
 Firmware dentro de `esp32_Project/`. Las fichas de prácticas y proyectos EDA se crearán cuando comience la etapa correspondiente. La futura integración de circuitos sin módulos es una revisión posterior.
 
-## Inicio previsto
+## Primera prueba
 
-1. Revisar el plan y proporcionar los scripts previos.
-2. Registrar placa, versión de Arduino IDE, core Arduino-ESP32 y bibliotecas.
-3. Abrir `esp32_Project/esp32_Project.ino` en Arduino IDE y seleccionar placa/puerto cuando se inicie P01.
+1. Revisar la ficha P17a y comprobar alimentación y señales de la MicroSD antes de conectar.
+2. Seleccionar core Arduino-ESP32 3.3.12 y la placa ESP32 correspondiente; no se requieren librerías adicionales para P17a.
+3. Abrir `esp32_Project/esp32_Project.ino` en Arduino IDE y seleccionar placa/puerto para esta prueba.
 4. Usar Verificar/Subir y conservar resultado de compilación y prueba en la ficha de práctica.
 
-Arduino CLI no está verificado en este entorno; no se publica un comando de compilación como si estuviera probado. Registrar FQBN y comando reproducible cuando se configure la herramienta.
+Compilación comprobada con Arduino CLI 1.5.1 y FQBN `esp32:esp32:esp32`. El comando para repetirla figura en la ficha P17a. La validación de hardware la realiza el usuario en protoboard.
 
 ## Git
 

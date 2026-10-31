@@ -7,7 +7,7 @@ Estado: propuesta para revisión. No es una asignación definitiva de GPIO ni un
 
 Desarrollar una plataforma de aprendizaje, empezando con una DevKit ESP-WROOM-32 de 30 pines y módulos comerciales. Evolución prevista: protoboard, baquela, PCB y después integración de los circuitos actualmente presentes en módulos. Usar Arduino IDE para firmware, EasyEDA inicialmente y KiCad después.
 
-Este incremento prepara únicamente el plan y la documentación de seguimiento. No implementa firmware, esquemáticos ni PCB. Los scripts previos del usuario se revisarán cuando estén disponibles; no se reemplazarán por anticipado.
+El incremento inicial preparó el plan y la documentación sin implementar firmware. Continuación 2026-10-31: revisadas las referencias locales y preparada P17a, prueba MicroSD independiente, compilada y pendiente de validación física. Ver ficha en `docs/practicas/P17a-microsd.md`. No hay todavía esquemático ni PCB de estos bloques.
 
 ## Método: un componente por vez
 
@@ -28,7 +28,7 @@ Cada práctica debe conservar un ejemplo reproducible. La extracción posterior 
 | Elemento | Información disponible | Pendiente |
 |---|---|---|
 | ESP32 | DevKit ESP-WROOM-32, 30 pines | Fabricante/modelo concreto, regulador, dimensiones, core Arduino-ESP32 y puerto |
-| Firmware | `esp32_Project/esp32_Project.ino` contiene la plantilla vacía | Recibir y revisar scripts previos de batería, GPS y otros |
+| Firmware | P17a implementada y compilada para core 3.3.12; referencias revisadas | Prueba física de SD y posterior integración DHT11/OLED |
 | Batería | Una celda 18650; disponibles resistencias de precisión de 27 kΩ y 47 kΩ | Cantidad de cada valor, tolerancia, mediciones y esquema anterior |
 | Alimentación de control | Baquela existente: TP4056 + MT3608 ajustado a 5 V para VIN | Protección instalada, consumos, rizado y relación con USB |
 | Alimentación de relés | Otra baquela, con salida de 12/24 V | Tensión real por prueba, modelo/consumo de bobinas y drivers |

@@ -9,7 +9,10 @@ Estado inicial: 2026-10-31. Este archivo es la lista de tareas del proyecto.
 - [ ] Revisar el plan con el usuario y ajustar prioridades.
 - [x] Revisar referencias disponibles de DHT, OLED, batería y GPS, conservándolas privadas e intactas.
 - [ ] Leer `TemHum_IA_resumen_chat.md` cuando esté disponible; no encontrado en esta revisión.
-- [ ] Confirmar conexiones actuales y entorno para priorizar DHT11 → OLED → MicroSD según la preparación documentada.
+- [x] Registrar DATA DHT11=GPIO4, OLED según ejemplo y core Arduino-ESP32 3.3.12.
+- [x] Preparar y compilar P17a: prueba MicroSD independiente con CS provisional en GPIO13.
+- [ ] Validar P17a físicamente: escritura/lectura, persistencia al reset y arranque sin tarjeta.
+- [ ] Integrar DHT11 y OLED después de validar la SD; conservar estados de error explícitos.
 
 ## Prácticas
 
