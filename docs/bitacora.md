@@ -46,3 +46,13 @@ Fechas en America/Bogota. Registrar únicamente trabajo realizado; separar propu
 - Usuario autoriza publicar en `dev` y excluye expresamente `examples/`: añadida exclusión en `.gitignore` antes del primer commit de trabajo.
 - Documentación inicial y plantilla del sketch preparadas para versionar; sin firmware funcional ni pruebas físicas confirmadas.
 - Usuario informa protoboard con ESP32, OLED y DHT11 conectados. Solicita revisar referencias y preparar después una prueba con MicroSD.
+
+## 2026-10-31 — Publicación y revisión de referencias
+
+- Publicada la base documental en `origin/dev`, commit `1b9f437`; verificada coincidencia del hash local con el remoto.
+- Verificado que `examples/` está ignorada y no contiene archivos versionados. Referencias locales conservadas.
+- Revisados ejemplos mínimos y modulares de DHT/OLED, dos variantes de batería y parámetros relevantes del GPS. La carpeta de referencia de SD contiene un diagrama, sin sketch.
+- Detectado factor de batería `4.9` en la referencia: requiere contraste con divisor real. Detectados errores DHT convertidos en ceros y dependencias entre sensor/pantalla que conviene separar.
+- Preparada propuesta `.h`/`.cpp` por componente y secuencia DHT por consola → OLED → SD sola → CSV integrado. Documento: `docs/revision-ejemplos-y-primera-prueba.md`.
+- No se encontró `examples/TemHum_IA_resumen_chat.md`; pendiente revisión de ese resumen específico.
+- No hay firmware nuevo, compilación ni pruebas físicas realizadas. Pendientes conexiones actuales, identificación de MicroSD y versión del core para preparar el primer sketch.

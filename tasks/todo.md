@@ -7,7 +7,9 @@ Estado inicial: 2026-10-31. Este archivo es la lista de tareas del proyecto.
 - [x] Revisar plan previo y estado inicial del `.ino`.
 - [x] Redactar propuesta de trabajo gradual y bitácora.
 - [ ] Revisar el plan con el usuario y ajustar prioridades.
-- [ ] Recibir e inventariar scripts previos sin sobrescribirlos.
+- [x] Revisar referencias disponibles de DHT, OLED, batería y GPS, conservándolas privadas e intactas.
+- [ ] Leer `TemHum_IA_resumen_chat.md` cuando esté disponible; no encontrado en esta revisión.
+- [ ] Confirmar conexiones actuales y entorno para priorizar DHT11 → OLED → MicroSD según la preparación documentada.
 
 ## Prácticas
 

@@ -11,6 +11,7 @@ Planificación inicial. `esp32_Project/esp32_Project.ino` contiene la plantilla 
 - [Plan de trabajo](tasks/plan.md): alcance, secuencia, pendientes y fuentes.
 - [Seguimiento](tasks/todo.md): prácticas y puntos de revisión.
 - [Bitácora](docs/bitacora.md): trabajo realizado y plantilla de registro.
+- [Revisión de ejemplos y primera prueba](docs/revision-ejemplos-y-primera-prueba.md): hallazgos, organización modular y preparación de DHT11 + OLED + MicroSD.
 - [Instrucciones de colaboración](AGENTS.md): uso de Agent Skills y criterios de validación.
 
 ## Forma de trabajo
