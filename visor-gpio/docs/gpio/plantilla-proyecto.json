@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "gpio-project-template",
+  "metadata": {
+    "author": "Ing. Diego Andrés García Díaz",
+    "instagram": "@dagdmfc",
+    "repository": "https://github.com/dagdmfc1946/Prototipo_Placa_Aprendizaje/tree/dev",
+    "version": "0.1.0",
+    "updatedAt": "2026-10-31",
+    "license": "MIT",
+    "history": [
+      "0.1.0 (2026-10-31): Registro inicial por proyecto y perfil técnico de referencia."
+    ]
+  },
+  "project": {
+    "id": null,
+    "name": "",
+    "description": "",
+    "boardProfileId": "esp32-wroom32-devkit-30-reference-v1",
+    "createdAt": null,
+    "updatedAt": null,
+    "pins": [
+      {
+        "gpio": 1,
+        "allocation": "reserved",
+        "reservationReason": "UART0: programación y consola; reserva inicial modificable por proyecto.",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 2,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 3,
+        "allocation": "reserved",
+        "reservationReason": "UART0: programación y consola; reserva inicial modificable por proyecto.",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 4,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 5,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 12,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 13,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 14,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 15,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 16,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 17,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 18,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 19,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 21,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 22,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 23,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 25,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 26,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 27,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 32,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 33,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 34,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 35,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 36,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      },
+      {
+        "gpio": 39,
+        "allocation": "free",
+        "reservationReason": "",
+        "assignments": [],
+        "notes": "",
+        "updatedAt": null
+      }
+    ]
+  }
+}

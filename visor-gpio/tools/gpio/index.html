@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- Archivo: index.html | Banco local de proyectos y GPIO ESP32.
+Autor: Ing. Diego Andrés García Díaz | Instagram: @dagdmfc
+Repositorio: https://github.com/dagdmfc1946/Prototipo_Placa_Aprendizaje/tree/dev
+Versión: 0.2.1 | Fecha: 2026-10-31 | SPDX-License-Identifier: MIT
+Historial: 0.2.1 (2026-10-31): Empaquetado exclusivo. 0.1.0: Fases 2–4. 0.2.0 (2026-10-31): Placa visual y editor en ventana. Licencia: ../../docs/gpio/LICENCIAS.md -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; object-src blob:; frame-src blob:; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light">
+  <title>Registro GPIO · Banco ESP32</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="board.js"></script>
+  <script defer src="model.js"></script>
+  <script defer src="transfer.js"></script>
+  <script defer src="storage.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Saltar al banco de trabajo</a>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">G<span>↔</span></span><div><p class="eyebrow">BANCO DE TRABAJO / ESP32</p><h1>Registro GPIO</h1></div></div>
+    <a class="header-link" href="#reference">Referencia y documentos <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="workspace">
+    <section class="project-bar" aria-labelledby="project-heading">
+      <div class="project-picker"><label id="project-heading" for="project-select">PROYECTO ACTIVO</label><select id="project-select"></select><p id="project-description" class="muted"></p></div>
+      <div class="project-actions"><button id="new-project" class="primary" type="button">+ Nuevo proyecto</button><button id="rename-project" type="button">Renombrar</button><button id="duplicate-project" type="button">Duplicar</button><button id="delete-project" class="danger-quiet" type="button">Eliminar</button><button id="reset-project" type="button">Restablecer…</button></div>
+    </section>
+    <section class="session-bar" aria-label="Guardado y respaldo">
+      <div><strong id="save-state">Cargando registro…</strong><p id="save-detail">Tus asignaciones no modifican el firmware ni las conexiones físicas.</p></div>
+      <div class="backup-actions"><button id="export-project" type="button">Exportar proyecto</button><button id="export-all" type="button">Respaldar todo</button><label class="file-button" for="import-file">Importar JSON<input id="import-file" type="file" accept=".json,application/json"></label><button id="recover-backup" type="button" hidden>Recuperar copia local</button><button id="resume-save" type="button" hidden>Reactivar guardado</button></div>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite">Selecciona un GPIO para consultar o editar su asignación.</div>
+    <section class="summary" aria-label="Resumen del proyecto" id="summary"></section>
+    <div class="workbench">
+      <section class="panel pin-panel" aria-labelledby="pins-heading">
+        <div class="panel-heading"><div><p class="eyebrow">01 / EXPLORAR</p><h2 id="pins-heading">Pines de la placa</h2></div><span class="tag">25 GPIO · 30 contactos</span></div>
+        <div class="filters"><label>Buscar GPIO o componente<input id="pin-search" type="search" placeholder="Ej. 13, OLED, SDA" maxlength="200"></label><label>Ocupación<select id="allocation-filter"><option value="all">Todos</option><option value="free">Libres</option><option value="assigned">Asignados</option><option value="reserved">Reservados</option></select></label><label>Capacidad<select id="capability-filter"><option value="all">Todas</option><option value="adc1">ADC1</option><option value="adc2">ADC2</option><option value="input-only">Solo entrada</option><option value="dac">DAC</option><option value="touch">Touch</option><option value="strapping">Arranque</option></select></label></div>
+        <div class="view-toolbar"><div class="segmented" role="group" aria-label="Vista de GPIO"><button id="map-view" type="button" aria-pressed="true">Vista de placa</button><button id="table-view" type="button" aria-pressed="false">Tabla</button></div><span id="filter-count" class="muted"></span></div>
+        <div id="map-container"><p class="map-note"><strong>Referencia de 30 pines · vista superior · USB abajo.</strong> Coteja las etiquetas con tu unidad; disposición aún no confirmada.</p><div class="board-scroll" tabindex="0" role="region" aria-label="Placa interactiva desplazable"><div class="board-map" id="board-map"></div></div><p class="map-scroll-hint">En pantallas pequeñas puedes desplazar la placa o usar la tabla.</p><button id="internal-pins" class="internal-pins" type="button">Uso interno del módulo: GPIO6–11 / flash · no disponibles</button></div>
+        <div id="table-container" hidden><div class="table-scroll" tabindex="0" role="region" aria-label="Tabla de GPIO desplazable"><table><caption class="sr-only">Ocupación, conexión y validación por GPIO</caption><thead><tr><th scope="col">GPIO</th><th scope="col">Ocupación / señal</th><th scope="col">Conexión / prueba</th><th scope="col">Acción</th></tr></thead><tbody id="pin-table"></tbody></table></div></div>
+        <p id="empty-filter" class="empty" hidden>No hay pines con estos filtros. Prueba otra búsqueda.</p>
+        <div class="legend" aria-label="Leyenda"><span class="state free">Libre</span><span class="state assigned">Asignado</span><span class="state reserved">Reservado</span><span class="tech-legend"><b>!</b> Precaución / arranque / solo entrada</span><span class="tech-legend"><b>R</b> Consola del ESP32</span><span class="tech-legend">— Control o alimentación; no asignable</span><span class="tech-legend"><b>×</b> Flash interna; no disponible</span><span class="muted">Ocupación del proyecto y restricciones técnicas son indicadores independientes.</span></div>
+      </section>
+<div class="board-tip"><strong>Selecciona un pin de la placa.</strong> Se abrirá una ventana para ponerle nombre, ocuparlo o dejarlo libre y consultar sus límites.</div>
+    </div>
+    <section class="panel reference-panel" id="reference" aria-labelledby="reference-heading">
+      <div class="panel-heading"><div><p class="eyebrow">03 / REFERENCIA</p><h2 id="reference-heading">Documentación en el banco</h2></div><span class="tag">Guía propia disponible sin Internet</span></div>
+      <div class="reference-grid"><div><div id="guide-content"></div><details><summary>Fuentes completas y licencias</summary><ul id="source-list"></ul><p><a href="../../docs/gpio/fuentes-y-licencias.md" target="_blank" rel="noopener">Inventario de procedencia</a> · <a href="../../docs/gpio/LICENCIAS.md" target="_blank" rel="noopener">Licencias del proyecto</a></p></details></div><div class="pdf-panel"><h3>Consultar un PDF local</h3><p>No se sube ni se incluye en respaldos. Los PDF de terceros no se distribuyen con la herramienta.</p><label for="pdf-file">Seleccionar documento (PDF, hasta 30 MiB)</label><input id="pdf-file" type="file" accept=".pdf,application/pdf"><p id="pdf-status" role="status">Sin documento seleccionado.</p><div id="pdf-actions" hidden><a id="open-pdf" class="file-button" target="_blank" rel="noopener">Abrir PDF aparte</a><button id="close-pdf" type="button">Cerrar documento</button></div><object id="pdf-viewer" type="application/pdf" aria-label="Documento PDF local" hidden><p>Usa «Abrir PDF aparte» si el navegador no muestra el documento aquí.</p></object></div></div>
+    </section>
+  </main>
+  <footer><p>Ing. Diego Andrés García Díaz · <a href="https://www.instagram.com/dagdmfc/" target="_blank" rel="noopener">@dagdmfc</a></p><p><a href="https://github.com/dagdmfc1946/Prototipo_Placa_Aprendizaje/tree/dev" target="_blank" rel="noopener">Repositorio</a> · v0.2.1 · Consulta externa requiere Internet</p></footer>
+      <dialog id="pin-editor" aria-labelledby="editor-heading" class="pin-editor">
+        <div class="panel-heading"><div><p class="eyebrow">02 / CONSULTAR Y EDITAR</p><h2 id="editor-heading">GPIO13</h2></div><div class="editor-window-actions"><span id="editor-allocation" class="tag"></span><button id="close-editor" type="button" aria-label="Cerrar ventana del GPIO">Cerrar ×</button></div></div>
+        <div id="technical" class="technical"></div><p id="pin-uses" class="pin-uses"></p>
+        <details class="technical-details"><summary>Fuentes y restricciones de este GPIO</summary><div id="technical-detail"></div></details>
+        <form id="pin-form" novalidate>
+          <p class="quick-heading">¿Cómo quieres usar este pin?</p>
+          <div class="quick-state" role="group" aria-label="Uso del GPIO"><button id="quick-free" type="button" aria-pressed="false">Dejar libre</button><button id="quick-assigned" type="button" aria-pressed="false">Ocupar pin</button><button id="quick-reserved" type="button" aria-pressed="false">Reservar</button></div>
+          <div id="quick-fields" class="quick-fields"><label>Nombre de la conexión<input id="quick-name" maxlength="200" placeholder="Ej. LED rojo, sensor de temperatura…"></label><label>Uso previsto<select id="quick-direction"><option value="input">Entrada / lectura</option><option value="output">Salida / control</option><option value="bidirectional">Bidireccional</option></select></label></div>
+          <p id="quick-hint" class="muted"></p>
+          <details id="advanced-assignment"><summary>Opciones avanzadas: señales, bus y evidencia</summary>
+
+          <div class="editor-top"><label>Ocupación<select id="pin-allocation"><option value="free">Libre</option><option value="assigned">Asignado</option><option value="reserved">Reservado</option></select></label><label id="reservation-label" hidden>Motivo de reserva<textarea id="reservation-reason" rows="2" maxlength="4000"></textarea></label></div>
+          <div id="assignment-list"></div><button id="add-assignment" class="add-signal" type="button" hidden>+ Añadir señal al mismo GPIO</button>
+          </details>
+          <label class="notes-field">Notas del GPIO<textarea id="pin-notes" rows="3" maxlength="4000" placeholder="Conexiones, decisiones o precauciones de este trabajo"></textarea></label>
+          <p id="form-error" class="form-error" role="alert" hidden></p><p id="draft-state" class="muted">Sin cambios pendientes.</p>
+          <div class="form-actions"><button class="primary" type="submit">Guardar cambios</button><button id="cancel-edit" type="button">Cancelar edición</button></div>
+        </form>
+        <details class="move-panel"><summary>Trasladar una señal a otro GPIO</summary><p class="muted">Revisa el destino y reinicia conexión y validación. No mueve cables ni modifica firmware.</p><label>Señal<select id="move-signal"></select></label><label>GPIO de destino<select id="move-target"></select></label><button id="move-assignment" type="button">Revisar traslado</button></details>
+
+      </dialog>
+  <dialog id="contact-dialog" aria-labelledby="contact-heading"><h2 id="contact-heading"></h2><p id="contact-description"></p><button id="close-contact" type="button">Cerrar</button></dialog>
+  <dialog id="action-dialog" aria-labelledby="dialog-heading"><form id="dialog-form" novalidate><h2 id="dialog-heading"></h2><p id="dialog-description"></p><div id="dialog-fields"><label>Nombre del proyecto<input id="dialog-name" maxlength="200" required></label><label>Descripción<textarea id="dialog-project-description" rows="2" maxlength="4000"></textarea></label></div><label id="import-mode-label" hidden>Cómo incorporar los datos<select id="import-mode"><option value="add">Añadir como trabajos nuevos (reiniciar evidencia física)</option><option value="restore">Restaurar respaldo (reemplazo explícito)</option></select></label><p id="dialog-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" id="dialog-cancel">Cancelar</button><button type="button" id="backup-delete" hidden>Respaldar y eliminar</button><button class="primary" type="submit" id="dialog-confirm">Confirmar</button></div></form></dialog>
+  <noscript><p class="notice">Activa JavaScript para usar el visor. Puedes consultar el registro y la guía en docs/gpio.</p></noscript>
+</body>
+</html>

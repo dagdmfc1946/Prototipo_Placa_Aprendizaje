@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 800" preserveAspectRatio="none" role="img" aria-labelledby="title desc">
+<title id="title">Ilustración original de referencia de una placa ESP32 de 30 contactos</title>
+<desc id="desc">Vista superior con antena arriba y USB abajo. Los botones externos identifican los pines; no representa una unidad físicamente verificada.</desc>
+<!-- Autor: Ing. Diego Andrés García Díaz | Instagram: @dagdmfc
+Repositorio: https://github.com/dagdmfc1946/Prototipo_Placa_Aprendizaje/tree/dev
+Versión: 0.1.0 | Fecha: 2026-10-31 | SPDX-License-Identifier: MIT
+Historial: 0.1.0 (2026-10-31): Dibujo SVG original, sin fotografías, logotipos ni certificaciones de terceros.
+Licencia: ../../docs/gpio/LICENCIAS.md -->
+<defs><linearGradient id="metal" x2="1" y2="1"><stop stop-color="#e3e5e2"/><stop offset=".5" stop-color="#b3b9b4"/><stop offset="1" stop-color="#e1e4df"/></linearGradient><pattern id="mesh" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 0h8v8" fill="none" stroke="#c6cdc7" stroke-width=".5"/></pattern></defs>
+<rect x="3" y="9" width="314" height="772" rx="28" fill="#202623" stroke="#0f1713" stroke-width="4"/>
+<path d="M65 46h24v29h24V46h24v29h24V46h24v29h24V46h35v52" fill="none" stroke="#8a9a82" stroke-width="5"/>
+<rect x="53" y="102" width="214" height="270" rx="5" fill="url(#metal)" stroke="#929f94" stroke-width="3"/><rect x="59" y="108" width="202" height="258" fill="url(#mesh)"/>
+<g fill="#344a3e" font-family="monospace" text-anchor="middle"><text x="160" y="174" font-size="27" font-weight="bold">ESP32</text><text x="160" y="207" font-size="18">WROOM-32</text><text x="160" y="274" font-size="12">PLACA DE REFERENCIA</text><text x="160" y="298" font-size="12">30 CONTACTOS</text></g>
+<g fill="#c2b37d">
+<rect x="45" y="120" width="7" height="8"/><rect x="268" y="120" width="7" height="8"/>
+<rect x="45" y="136" width="7" height="8"/><rect x="268" y="136" width="7" height="8"/>
+<rect x="45" y="152" width="7" height="8"/><rect x="268" y="152" width="7" height="8"/>
+<rect x="45" y="168" width="7" height="8"/><rect x="268" y="168" width="7" height="8"/>
+<rect x="45" y="184" width="7" height="8"/><rect x="268" y="184" width="7" height="8"/>
+<rect x="45" y="200" width="7" height="8"/><rect x="268" y="200" width="7" height="8"/>
+<rect x="45" y="216" width="7" height="8"/><rect x="268" y="216" width="7" height="8"/>
+<rect x="45" y="232" width="7" height="8"/><rect x="268" y="232" width="7" height="8"/>
+<rect x="45" y="248" width="7" height="8"/><rect x="268" y="248" width="7" height="8"/>
+<rect x="45" y="264" width="7" height="8"/><rect x="268" y="264" width="7" height="8"/>
+<rect x="45" y="280" width="7" height="8"/><rect x="268" y="280" width="7" height="8"/>
+<rect x="45" y="296" width="7" height="8"/><rect x="268" y="296" width="7" height="8"/>
+<rect x="45" y="312" width="7" height="8"/><rect x="268" y="312" width="7" height="8"/>
+<rect x="45" y="328" width="7" height="8"/><rect x="268" y="328" width="7" height="8"/>
+<rect x="45" y="344" width="7" height="8"/><rect x="268" y="344" width="7" height="8"/>
+</g><g fill="#aeb9b0" stroke="#5b6a60">
+<rect x="65" y="410" width="24" height="10" rx="1"/><path d="M70 410v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="112" y="410" width="24" height="10" rx="1"/><path d="M117 410v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="159" y="410" width="24" height="10" rx="1"/><path d="M164 410v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="206" y="410" width="24" height="10" rx="1"/><path d="M211 410v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="65" y="449" width="24" height="10" rx="1"/><path d="M70 449v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="112" y="449" width="24" height="10" rx="1"/><path d="M117 449v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="159" y="449" width="24" height="10" rx="1"/><path d="M164 449v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="206" y="449" width="24" height="10" rx="1"/><path d="M211 449v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="65" y="488" width="24" height="10" rx="1"/><path d="M70 488v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="112" y="488" width="24" height="10" rx="1"/><path d="M117 488v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="159" y="488" width="24" height="10" rx="1"/><path d="M164 488v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="206" y="488" width="24" height="10" rx="1"/><path d="M211 488v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="65" y="527" width="24" height="10" rx="1"/><path d="M70 527v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="112" y="527" width="24" height="10" rx="1"/><path d="M117 527v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="159" y="527" width="24" height="10" rx="1"/><path d="M164 527v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+<rect x="206" y="527" width="24" height="10" rx="1"/><path d="M211 527v10m14-10v10" stroke="#ede8d8" stroke-width="3"/>
+</g><g fill="#383f3b" stroke="#69766d"><rect x="73" y="560" width="66" height="69"/><rect x="182" y="567" width="49" height="62"/><rect x="68" y="669" width="43" height="30"/><rect x="209" y="669" width="43" height="30"/></g><g fill="#e4e9e2" font-family="monospace" font-size="11" text-anchor="middle"><text x="93" y="657">EN</text><text x="230" y="657">BOOT</text><text x="160" y="533">3,3 V / GPIO</text></g>
+<path d="M137 572v-29h43v74h-23v64m-51-89H58v43h73m80-62h55v77h-46" fill="none" stroke="#4a5e4e" stroke-width="2"/>
+<rect x="118" y="725" width="84" height="68" rx="9" fill="url(#metal)" stroke="#7f8e84" stroke-width="2"/><rect x="130" y="763" width="60" height="19" rx="8" fill="#29372f"/><path d="M136 771h48" stroke="#b2bfae" stroke-width="3"/>
+<g fill="#f3f5f3" stroke="#a2aea4" stroke-width="6"><circle cx="37" cy="34" r="16"/><circle cx="283" cy="34" r="16"/><circle cx="37" cy="748" r="16"/><circle cx="283" cy="748" r="16"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="63" r="8"/><circle cx="301" cy="63" r="8"/></g><g fill="#313b34"><circle cx="19" cy="63" r="3"/><circle cx="301" cy="63" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="109" r="8"/><circle cx="301" cy="109" r="8"/></g><g fill="#313b34"><circle cx="19" cy="109" r="3"/><circle cx="301" cy="109" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="155" r="8"/><circle cx="301" cy="155" r="8"/></g><g fill="#313b34"><circle cx="19" cy="155" r="3"/><circle cx="301" cy="155" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="201" r="8"/><circle cx="301" cy="201" r="8"/></g><g fill="#313b34"><circle cx="19" cy="201" r="3"/><circle cx="301" cy="201" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="247" r="8"/><circle cx="301" cy="247" r="8"/></g><g fill="#313b34"><circle cx="19" cy="247" r="3"/><circle cx="301" cy="247" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="293" r="8"/><circle cx="301" cy="293" r="8"/></g><g fill="#313b34"><circle cx="19" cy="293" r="3"/><circle cx="301" cy="293" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="339" r="8"/><circle cx="301" cy="339" r="8"/></g><g fill="#313b34"><circle cx="19" cy="339" r="3"/><circle cx="301" cy="339" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="385" r="8"/><circle cx="301" cy="385" r="8"/></g><g fill="#313b34"><circle cx="19" cy="385" r="3"/><circle cx="301" cy="385" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="431" r="8"/><circle cx="301" cy="431" r="8"/></g><g fill="#313b34"><circle cx="19" cy="431" r="3"/><circle cx="301" cy="431" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="477" r="8"/><circle cx="301" cy="477" r="8"/></g><g fill="#313b34"><circle cx="19" cy="477" r="3"/><circle cx="301" cy="477" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="523" r="8"/><circle cx="301" cy="523" r="8"/></g><g fill="#313b34"><circle cx="19" cy="523" r="3"/><circle cx="301" cy="523" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="569" r="8"/><circle cx="301" cy="569" r="8"/></g><g fill="#313b34"><circle cx="19" cy="569" r="3"/><circle cx="301" cy="569" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="615" r="8"/><circle cx="301" cy="615" r="8"/></g><g fill="#313b34"><circle cx="19" cy="615" r="3"/><circle cx="301" cy="615" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="661" r="8"/><circle cx="301" cy="661" r="8"/></g><g fill="#313b34"><circle cx="19" cy="661" r="3"/><circle cx="301" cy="661" r="3"/></g>
+<g fill="#bfc8bd" stroke="#9b945b" stroke-width="3"><circle cx="19" cy="707" r="8"/><circle cx="301" cy="707" r="8"/></g><g fill="#313b34"><circle cx="19" cy="707" r="3"/><circle cx="301" cy="707" r="3"/></g>
+</svg>
