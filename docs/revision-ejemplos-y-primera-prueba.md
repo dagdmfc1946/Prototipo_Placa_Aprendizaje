@@ -75,3 +75,7 @@ Se priorizan P11 (DHT), P07 (OLED) y P17 (MicroSD) por el montaje ya disponible.
 - [Compilación de sketches Arduino](https://docs.arduino.cc/arduino-cli/sketch-build-process/): separación de `.ino`, `.h` y `.cpp`.
 
 Se elegirán versiones concretas al preparar el sketch; las referencias a `master` no fijan una versión reproducible de dependencias.
+
+## Referencia vigente — 2026-11-02
+
+Las dudas de esta revisión inicial ya tienen resultado en P17b: validación funcional confirmada y CS MicroSD adoptado en GPIO13. GPIO5 es solamente un antecedente histórico. Ver [conexiones actuales](../hardware/conexiones-rev-a.md) y [bloques lógicos](../hardware/diagrama-bloques-rev-a.md). EasyEDA/esquemático/PCB y consumo se posponen según la secuencia acordada; no interpretar propuestas anteriores como tareas CAD actuales.

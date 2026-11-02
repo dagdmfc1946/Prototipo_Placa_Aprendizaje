@@ -1,6 +1,6 @@
 # P17a — MicroSD: agregar y verificar un registro
 
-Fecha: 2026-10-31. Estado: implementada y compilada; pendiente de resultado físico.
+Fecha: 2026-10-31. Estado: implementada y compilada; escritura y ausencia de tarjeta confirmadas por el usuario el 2026-11-02.
 
 ## Objetivo
 
@@ -31,7 +31,7 @@ Conectar sin alimentación. Seguir nombres de señal, no el orden físico de las
 | DI / MOSI | GPIO23 |
 | CS | GPIO13 |
 
-GPIO13 es provisional y evita usar GPIO5 como CS en esta práctica. No conectar allí el buzzer del pinout anterior. No es todavía el pinout de la PCB. Las señales de alimentación/señal deben comprobarse con la serigrafía o continuidad de la unidad; si incorpora otro circuito, revisar su alimentación antes de aplicar esta tabla.
+GPIO13 fue el CS provisional probado y queda adoptado para la revisión actual por confirmación del usuario el 2026-11-02; GPIO5 no se usa como CS. No conectar allí el buzzer del pinout anterior. No es todavía el pinout de la PCB. Las señales de alimentación/señal deben comprobarse con la serigrafía o continuidad de la unidad; si incorpora otro circuito, revisar su alimentación antes de aplicar esta tabla.
 
 Usar conexiones cortas y verificar los headers soldados. Se configura SPI a 1 MHz para comenzar en protoboard. Si hay fallos, medir 3,3 V también durante escritura; no atribuirlos automáticamente al software.
 
@@ -61,11 +61,11 @@ Texto de cada registro: `ESP32 microSD: prueba de escritura y lectura.` seguido 
 | Comprobación | Resultado |
 |---|---|
 | Compilación con Arduino-ESP32 3.3.12 | Correcta, 2026-10-31; FQBN esp32:esp32:esp32 |
-| Montaje con tarjeta insertada | Pendiente del usuario |
-| Registro nuevo coincide byte a byte | Pendiente del usuario |
-| Reinicio conserva y agrega datos | Pendiente del usuario |
-| PC muestra las líneas esperadas | Pendiente del usuario |
-| Arranque sin tarjeta informa fallo | Pendiente del usuario |
+| Montaje con tarjeta insertada | Escritura conseguida según captura y reporte del usuario; log de arranque exitoso no transcrito |
+| Registro nuevo coincide byte a byte | Texto esperado visible en captura; comparación interna no transcrita en el log recibido |
+| Reinicio conserva y agrega datos | Cuatro registros visibles y pruebas informadas por el usuario; sin secuencia detallada de arranques |
+| PC muestra las líneas esperadas | Confirmado: captura con cuatro registros, 2026-11-02 |
+| Arranque sin tarjeta informa fallo | Confirmado por usuario: el log de fallo corresponde a tarjeta retirada, 2026-11-02 |
 
 Registrar capacidad/formato de tarjeta, selección de placa, conexión real, salida serie y tensión de alimentación si hay fallos. No marcar P17 completa: faltan la validación física, integración y esquemático.
 
@@ -91,3 +91,9 @@ Para repetir desde la raíz del repositorio en PowerShell:
 ```
 
 Este comando depende de las rutas de la instalación actual. En Arduino IDE se puede usar Verificar con la placa equivalente seleccionada.
+
+## Resultado recibido el 2026-11-02
+
+El usuario informa ejecución de las pruebas y aporta captura de `prueba_sd.txt` con cuatro líneas esperadas. Confirma expresamente que el mensaje `ERROR: tarjeta no montada` se obtuvo después de retirar la microSD, por lo que corresponde al caso negativo previsto, no a un fallo demostrado con tarjeta insertada. La escritura en tarjeta y la detección de ausencia quedan documentadas; no se aportó el log de los arranques exitosos para transcribir los tamaños o la comparación interna byte a byte. No se solicitaron repeticiones innecesarias de las pruebas ya informadas.
+
+La integración de almacenamiento DHT/CSV y el esquemático siguen pendientes. Para repetir P17a con el firmware nuevo, seleccionar `PRACTICA_ACTIVA PRACTICA_MICROSD` en `Config.h` antes de compilar; la selección predeterminada ahora es `PRACTICA_DHT_OLED`.

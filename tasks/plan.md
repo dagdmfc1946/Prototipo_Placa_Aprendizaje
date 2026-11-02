@@ -1,13 +1,13 @@
 # Plan de trabajo: placa de aprendizaje ESP32
 
 Fecha inicial: 2026-10-31, America/Bogota.
-Estado: propuesta para revisión. No es una asignación definitiva de GPIO ni un diseño listo para fabricar.
+Estado actual: P17a, P11/P07 y P17b validadas funcionalmente en protoboard. Conexiones y bloques lógicos consolidados para el conjunto actual; consumo diferido. Esquemático/PCB en chat exclusivo después de validar todos los sensores. No es un diseño listo para fabricar.
 
 ## Objetivo y alcance actual
 
 Desarrollar una plataforma de aprendizaje, empezando con una DevKit ESP-WROOM-32 de 30 pines y módulos comerciales. Evolución prevista: protoboard, baquela, PCB y después integración de los circuitos actualmente presentes en módulos. Usar Arduino IDE para firmware, EasyEDA inicialmente y KiCad después.
 
-El incremento inicial preparó el plan y la documentación sin implementar firmware. Continuación 2026-10-31: revisadas las referencias locales y preparada P17a, prueba MicroSD independiente, compilada y pendiente de validación física. Ver ficha en `docs/practicas/P17a-microsd.md`. No hay todavía esquemático ni PCB de estos bloques.
+El firmware P17b está validado en protoboard: cinco ciclos normales, veinte registros y pruebas de ausencia/recuperación correctas. El consumo dormido y la alimentación conmutada se medirán/estudiarán después. Ahora se mantienen únicamente la tabla de conexiones y el diagrama lógico; el esquemático y PCB se harán en otro chat tras validar todos los componentes previstos.
 
 ## Método: un componente por vez
 
@@ -18,17 +18,17 @@ Para cada componente repetir esta secuencia:
 3. Preparar un script mínimo de ese componente con configuración centralizada. Compilar para la placa y versión del core registradas.
 4. El usuario conecta y prueba en protoboard. Registrar medidas, salida serie, condiciones y errores reales. La compilación no demuestra funcionamiento físico.
 5. Corregir y repetir hasta satisfacer los criterios de aceptación de esa práctica.
-6. Incorporar al esquemático solamente el bloque validado, señalando cualquier aspecto eléctrico todavía pendiente. Comprobar conectividad y reglas eléctricas del bloque con el resto del proyecto.
+6. Incorporar el bloque validado a la tabla de conexiones y al diagrama lógico, señalando pendientes eléctricos. El esquema CAD y PCB se posponen hasta terminar todos los sensores y se desarrollan en un chat exclusivo, según instrucción del usuario del 2026-11-02.
 7. Actualizar documentación, pinout provisional y bitácora. Revisar el resultado con el usuario antes de comenzar el siguiente componente.
 
-Cada práctica debe conservar un ejemplo reproducible. La extracción posterior a `.h` y, si corresponde, `.cpp` se hace tras validar el comportamiento; el `.ino` principal seleccionará y coordinará lo que se desee usar. No es necesario implementar todos los componentes antes de dibujar el primer bloque del esquemático.
+Cada práctica conserva un ejemplo reproducible. Los componentes se organizan en `.h`/`.cpp` y el `.ino` coordina la práctica seleccionada. La tabla y los bloques lógicos crecen con las validaciones; EasyEDA y el esquema se abordarán al terminar todos los sensores previstos en un chat exclusivo.
 
 ## Situación conocida
 
 | Elemento | Información disponible | Pendiente |
 |---|---|---|
-| ESP32 | DevKit ESP-WROOM-32, 30 pines | Fabricante/modelo concreto, regulador, dimensiones, core Arduino-ESP32 y puerto |
-| Firmware | P17a implementada y compilada para core 3.3.12; referencias revisadas | Prueba física de SD y posterior integración DHT11/OLED |
+| ESP32 | DevKit ESP-WROOM-32, 30 pines; core 3.3.12 y compilación ESP32 Dev Module | Fabricante/modelo concreto, regulador, dimensiones y correspondencia física de contactos |
+| Firmware | P17a/P11/P07/P17b validadas; CSV y deep sleep básico, cinco ciclos normales | Validar los demás sensores; consumo y optimización diferidos |
 | Batería | Una celda 18650; disponibles resistencias de precisión de 27 kΩ y 47 kΩ | Cantidad de cada valor, tolerancia, mediciones y esquema anterior |
 | Alimentación de control | Baquela existente: TP4056 + MT3608 ajustado a 5 V para VIN | Protección instalada, consumos, rizado y relación con USB |
 | Alimentación de relés | Otra baquela, con salida de 12/24 V | Tensión real por prueba, modelo/consumo de bobinas y drivers |
@@ -68,7 +68,7 @@ Los identificadores de práctica se conservan aunque se ajuste su orden. Se pued
 | P18: GPS | Tramas válidas; distinguir recepción de datos de posición válida; prueba exterior | P01 y script/modelo disponibles |
 | P19: RS485 | Envío/recepción con segundo extremo, control de dirección y reinicio | P01 y transceptor/segundo extremo disponibles |
 
-En cada fila, el cierre incluye también su bloque de esquemático y la bitácora; el orden no obliga a comprar todo ahora. Si falta un componente, se deja pendiente y se acuerda otra práctica disponible.
+En cada fila, el cierre de práctica incluye firmware, prueba física, tabla/diagrama lógico y bitácora; CAD es una etapa posterior separada. El orden no obliga a comprar todo ahora. Si falta un componente, se deja pendiente y se acuerda otra práctica disponible.
 
 ## Integración y evolución física
 
@@ -140,3 +140,42 @@ Consultadas el 2026-10-31. Las recomendaciones del plan previo son antecedentes,
 - [Tiny RTC indicado por el usuario](https://www.didacticaselectronicas.com/shop/rtc-i2c-tiny-reloj-de-tiempo-real-3017): acceso web falló por timeout; chip y circuito no confirmados.
 - [Importadores EasyEDA en documentación de desarrollo KiCad](https://dev-docs.kicad.org/en/import-formats/easyeda/), [descargas EasyEDA](https://easyeda.com/page/download).
 - Descubrimiento de plugins: sin coincidencias dedicadas para EasyEDA/KiCad en esta sesión. Posibles vías de colaboración: archivos exportados y control de interfaz cuando se configure; no hay conexión activa establecida.
+
+## Plan complementario: registro GPIO y visor técnico local
+
+El desarrollo del visor se detalla en [su plan de cuatro fases](../visor-gpio/docs/plan-chat-registro-gpio.md), separado de las prácticas de firmware. Tecnología acordada: HTML, CSS y JavaScript local; asignaciones editables, referencia técnica original, consulta de PDF locales y respaldo JSON. Solo incorporar software/recursos con licencias abiertas compatibles verificadas; la documentación externa sin ese permiso se enlaza y no se redistribuye. Seguimiento en la sección específica de `todo.md`. Esta planificación no cambia prioridades ni validaciones pendientes del hardware.
+
+Continuación del visor (2026-10-31): el usuario solicita proyectos independientes y autoriza comenzar Fase 1. Preparados contrato, registro inicial/plantilla y documentación/licencias de alcance delimitado; ver [pruebas de revisión](../visor-gpio/docs/gpio/uso-y-verificacion.md). Fase 2 añadirá operaciones de proyectos y edición, Fase 3 persistencia por colección/proyecto. Entrega local pendiente de revisión; no cambia las prácticas de firmware ni autoriza publicación.
+
+## Entrega local del visor GPIO — fases 2–4
+
+Usuario autoriza completar fases 2–4 y revisar al terminar, manteniendo publicación condicionada a aprobación. Implementados proyectos, edición, referencia/PDF, autoguardado y respaldo JSON. Documentación separada: [Fase 2](../visor-gpio/docs/gpio/fase-2-visor.md), [Fase 3](../visor-gpio/docs/gpio/fase-3-persistencia.md), [Fase 4](../visor-gpio/docs/gpio/fase-4-verificacion.md). [Uso y pruebas](../visor-gpio/docs/gpio/uso-y-verificacion.md); abrir `visor-gpio/tools/gpio/index.html` localmente. Este incremento no modifica prácticas, firmware ni resultados de hardware.
+
+Revisión posterior del visor (2026-10-31): placa visual y ventana rápida al seleccionar GPIO, conservando modo avanzado, proyectos y respaldos. Refinamiento de Fases 2/4, documentado en [revisión de placa](../visor-gpio/docs/gpio/revision-placa-visual.md). Sin cambios de firmware ni publicación.
+
+## 2026-11-02 — Consolidación local del visor
+
+Publicado en `dev` como `visor-gpio/` (`c4f1bca`). Por solicitud del usuario se retiran las copias antiguas de la raíz, conservando respaldo externo y actualizando enlaces locales. La carpeta definitiva coincide con la publicada; esta limpieza no publica cambios adicionales.
+
+## Actualización 2026-11-02 — Prueba DHT11/OLED
+
+- P17a: captura con cuatro registros y confirmación de fallo esperado al arrancar con tarjeta retirada. No se interpreta ese log como un fallo con tarjeta insertada.
+- Siguiente incremento autorizado: P11/P07 DHT11/OLED, sin guardar todavía mediciones en SD. Selector de práctica en Config.h conserva P17a. Ver `docs/practicas/P11-P07-dht11-oled.md`.
+- Conexiones provisionales: DHT DATA4, OLED SDA21/SCL22; se conservan CS13/SCK18/MISO19/MOSI23 para SD. La definición del conjunto definitivo y el esquemático siguen después de la validación física.
+- El visor GPIO permanece en su chat/carpeta propios; no se modifica desde este incremento. No hacer commit ni publicar sin autorización.
+
+## Actualización 2026-11-02 — CSV y sueño básico
+
+Usuario confirma ausencia de OLED y espera inicial, completando los casos funcionales informados de P11/P07. Autoriza continuar con cuatro intentos cada 5 s, ventana nominal de 20 s y deep sleep 60 s. Se implementa P17b manteniendo los GPIO provisionales y tres selecciones de práctica; ver `docs/practicas/P17b-csv-deep-sleep.md`.
+
+El usuario acuerda pulir después el sueño/consumo y estudiar corte de alimentación por load switch/MOSFET. No se añaden esos circuitos ni GPIO de habilitación ahora. Compilaciones correctas; CSV real, despertar, temporización y consumo deben probarse en protoboard. Esquemático y pinout definitivo siguen pendientes; no se modifica el visor desde este chat y no se publica sin autorización.
+
+## Validación de P17b — 2026-11-02
+
+Usuario confirma todo el plan físico correcto: cinco ciclos normales y captura con veinte filas y cabecera única. El log demuestra cuatro intentos aun sin módulos, despertar por temporizador y disponibilidad de DHT, OLED y SD en ciclos posteriores. La práctica funcional queda validada; consumo, alimentación conmutada, pinout definitivo, esquemático y PCB siguen pendientes. Evidencia y detalles en la ficha P17b. Este reporte no autoriza commit ni publicación.
+
+## Secuencia acordada para hardware — 2026-11-02
+
+El usuario limita el trabajo actual a [tabla de conexiones](../hardware/conexiones-rev-a.md) y [diagrama lógico](../hardware/diagrama-bloques-rev-a.md). MicroSD CS queda en GPIO13, no GPIO5; SPI restante 18/19/23, DHT DATA4 y OLED SDA21/SCL22. Se amplían estos documentos conforme se validen los demás componentes.
+
+EasyEDA, diseño de esquemático y PCB quedan para el final de la verificación/validación de todos los sensores previstos, en un chat exclusivo. Esta instrucción posterior sustituye recomendaciones anteriores de empezar la captura CAD ahora. La medición de consumo y la alimentación conmutada también quedan pendientes; no bloquean la publicación del firmware funcional ya validado, autorizada expresamente por el usuario en este turno.
