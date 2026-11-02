@@ -9,7 +9,7 @@
 
 ## Desarrollo incremental
 
-- Cada práctica: identificación, conexión, script, compilación, prueba física confirmada por usuario, tabla de conexiones, bloque lógico y registro. EasyEDA/esquemático/PCB se harán en un chat exclusivo al terminar todos los sensores; no iniciar CAD desde este chat ahora.
+- Cada práctica: identificación, conexión, script, compilación, prueba física confirmada por usuario, tabla de conexiones y registro; actualizar el diagrama Archify únicamente si el usuario lo indica después de validar la prueba. EasyEDA/esquemático/PCB se harán en un chat exclusivo al terminar todos los sensores; no iniciar CAD desde este chat ahora.
 - Antes de código nuevo usar las skills de implementación incremental y pruebas cuando corresponda; para errores usar depuración sistemática. Aplicar revisión de código antes de integrar cambios.
 - No inventar resultados de hardware, versiones de librerías o comandos ejecutados. Distinguir implementado, compilado, probado físicamente e integrado.
 - Consultar documentación primaria para interfaces, niveles y restricciones. El pinout previo es provisional, no una instrucción para conectar todo.
@@ -37,3 +37,9 @@
 - El 2026-11-02 el usuario autoriza publicar en dev el firmware validado, su documentación/evidencia actualizada y la tabla/diagrama lógico. Esa autorización es puntual; no se extiende a futuras publicaciones ni a diseño CAD.
 
 - Asignación adoptada para el conjunto actual: CS MicroSD GPIO13, SCK18, MISO19, MOSI23; DHT DATA4, OLED SDA21/SCL22. GPIO5 fue una propuesta antigua sustituida. Ver hardware/conexiones-rev-a.md; no reasignar GPIO13 a buzzer simultáneamente.
+
+## Diagrama lógico Archify
+
+- El diagrama vigente es el HTML de Archify, con su fuente JSON editable. Solo actualizarlo por indicación expresa del usuario y después de validar una nueva prueba; la validación no autoriza por sí sola regenerarlo. Publicar requiere autorización expresa para cada incremento.
+- Archivos: hardware/diagrama-bloques-rev-a.html y hardware/diagrama-bloques-rev-a.archify.json. No recrear el anterior Mermaid .md ni editar el HTML generado a mano. Seguir hardware/README.md.
+- El 2026-11-02 el usuario autoriza esta migración a Archify, actualización documental y publicación en dev. Autorización puntual, sin alcance a futuras publicaciones.

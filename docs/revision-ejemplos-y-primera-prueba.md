@@ -78,4 +78,4 @@ Se elegirán versiones concretas al preparar el sketch; las referencias a `maste
 
 ## Referencia vigente — 2026-11-02
 
-Las dudas de esta revisión inicial ya tienen resultado en P17b: validación funcional confirmada y CS MicroSD adoptado en GPIO13. GPIO5 es solamente un antecedente histórico. Ver [conexiones actuales](../hardware/conexiones-rev-a.md) y [bloques lógicos](../hardware/diagrama-bloques-rev-a.md). EasyEDA/esquemático/PCB y consumo se posponen según la secuencia acordada; no interpretar propuestas anteriores como tareas CAD actuales.
+Las dudas de esta revisión inicial ya tienen resultado en P17b: validación funcional confirmada y CS MicroSD adoptado en GPIO13. GPIO5 es solamente un antecedente histórico. Ver [conexiones actuales](../hardware/conexiones-rev-a.md) y [bloques lógicos](../hardware/diagrama-bloques-rev-a.html). EasyEDA/esquemático/PCB y consumo se posponen según la secuencia acordada; no interpretar propuestas anteriores como tareas CAD actuales.

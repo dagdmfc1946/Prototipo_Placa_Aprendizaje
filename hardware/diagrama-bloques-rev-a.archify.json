@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "ESP32 · Diagrama lógico de bloques · Revisión A",
+    "locale": "es",
+    "output": "hardware/diagrama-bloques-rev-a.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:dagdmfc1946/Prototipo_Placa_Aprendizaje.git",
+      "revision": "c46442f619883422caaa5bd3ce2ea6a162f5bbf5",
+      "link_mode": "local-only"
+    },
+    "legend": {
+      "entries": {
+        "external": {
+          "label": "Sensor / interfaz externa"
+        },
+        "backend": {
+          "label": "Microcontrolador"
+        },
+        "frontend": {
+          "label": "Presentación"
+        },
+        "database": {
+          "label": "Almacenamiento"
+        },
+        "cloud": {
+          "label": "Alimentación común"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "consola",
+      "type": "external",
+      "label": "Programación y consola",
+      "sublabel": "USB-UART de la DevKit",
+      "pos": [
+        460,
+        40
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 16,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "id": "esp32",
+      "type": "backend",
+      "label": "ESP32 DevKit",
+      "sublabel": "ESP-WROOM-32 · 30 pines",
+      "pos": [
+        460,
+        240
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 3,
+          "end_line": 17
+        }
+      ],
+      "tag": "Control y adquisición"
+    },
+    {
+      "id": "dht11",
+      "type": "external",
+      "label": "DHT11",
+      "sublabel": "DATA GPIO4 · temperatura/humedad",
+      "pos": [
+        40,
+        500
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 9,
+          "end_line": 9
+        }
+      ]
+    },
+    {
+      "id": "oled",
+      "type": "frontend",
+      "label": "OLED SSD1306",
+      "sublabel": "SDA21 / SCL22 · 128×64 · 0x3C",
+      "pos": [
+        460,
+        500
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 10,
+          "end_line": 11
+        }
+      ]
+    },
+    {
+      "id": "microsd",
+      "type": "database",
+      "label": "MicroSD · CSV",
+      "sublabel": "SCK18 / MISO19 / MOSI23 · CS13",
+      "pos": [
+        880,
+        500
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 12,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "id": "alimentacion",
+      "type": "cloud",
+      "label": "Alimentación común",
+      "sublabel": "3V3 / GND · sin corte en sueño",
+      "pos": [
+        460,
+        790
+      ],
+      "size": [
+        240,
+        76
+      ],
+      "icon": "none",
+      "sources": [
+        {
+          "path": "hardware/conexiones-rev-a.md",
+          "line": 23,
+          "end_line": 28
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "esp32-consola",
+      "from": "esp32",
+      "to": "consola",
+      "label": "UART0 · TX1 / RX3"
+    },
+    {
+      "id": "consola-esp32",
+      "from": "consola",
+      "to": "esp32",
+      "label": "Consola / carga"
+    },
+    {
+      "id": "esp32-dht11",
+      "from": "esp32",
+      "to": "dht11",
+      "label": "Inicio · GPIO4"
+    },
+    {
+      "id": "dht11-esp32",
+      "from": "dht11",
+      "to": "esp32",
+      "label": "Temperatura / humedad"
+    },
+    {
+      "id": "esp32-oled",
+      "from": "esp32",
+      "to": "oled",
+      "label": "I²C · SDA21 / SCL22"
+    },
+    {
+      "id": "oled-esp32",
+      "from": "oled",
+      "to": "esp32",
+      "label": "Respuesta I²C"
+    },
+    {
+      "id": "esp32-microsd",
+      "from": "esp32",
+      "to": "microsd",
+      "label": "SPI · CS13"
+    },
+    {
+      "id": "microsd-esp32",
+      "from": "microsd",
+      "to": "esp32",
+      "label": "Datos MISO19"
+    },
+    {
+      "id": "energia-esp32",
+      "from": "alimentacion",
+      "to": "esp32",
+      "label": "3V3 / GND"
+    },
+    {
+      "id": "energia-dht11",
+      "from": "alimentacion",
+      "to": "dht11",
+      "label": "3V3 / GND"
+    },
+    {
+      "id": "energia-oled",
+      "from": "alimentacion",
+      "to": "oled",
+      "label": "3V3 / GND"
+    },
+    {
+      "id": "energia-microsd",
+      "from": "alimentacion",
+      "to": "microsd",
+      "label": "3V3 / GND"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Conexiones adoptadas · Revisión A",
+      "items": [
+        "Seis bloques del conjunto validado en protoboard. Las flechas agrupan interfaces; no representan un esquemático eléctrico.",
+        "Las dos direcciones de cada interfaz distinguen órdenes y respuestas. I²C: SDA bidireccional; SCL es el reloj del ESP32. SPI: SCK/MOSI/CS son salidas y MISO es entrada.",
+        "CS de microSD: GPIO13. UART0 GPIO1/3 reservado para programación y consola."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Validación y sueño",
+      "items": [
+        "P17b: cuatro intentos cada 5 s nominales y deep sleep configurado de 60 s. Cinco ciclos normales y ausencia/recuperación confirmados por el usuario.",
+        "Al dormir: SD desmontada y OLED OFF solicitado. Los periféricos continúan alimentados.",
+        "El consumo y la precisión independiente del reloj quedan pendientes."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Documento vigente · versión 0.1.0",
+      "items": [
+        "Fuente: hardware/conexiones-rev-a.md y práctica P17b, commit c46442f. Generado con Archify 3.2.0 el 2026-11-02.",
+        "Autor: Ing. Diego Andrés García Díaz · Instagram: @dagdmfc.",
+        "Repositorio: https://github.com/dagdmfc1946/Prototipo_Placa_Aprendizaje/tree/dev",
+        "Actualizar solo por indicación expresa del usuario y después de validar una nueva prueba. Publicación requiere autorización expresa.",
+        "EasyEDA, esquemático y PCB: etapa posterior en un chat exclusivo."
+      ]
+    }
+  ]
+}

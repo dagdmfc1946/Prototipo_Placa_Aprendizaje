@@ -183,3 +183,12 @@ Fechas en America/Bogota. Registrar únicamente trabajo realizado; separar propu
 - Agregados hardware/README.md, conexiones-rev-a.md y diagrama-bloques-rev-a.md; sin fuentes CAD, footprints ni archivos de fabricación. Corregidos resúmenes pendientes obsoletos del plan, manteniendo el historial de la bitácora.
 - Cierre de prácticas ajustado por instrucción expresa: firmware/pruebas/tabla/bloques/bitácora, con CAD como fase posterior. P01, P07, P11 y P17 funcionales completadas; identificación de otros módulos, resto de prácticas y consumo siguen abiertos.
 - Revisadas fuentes: los diez archivos de firmware coinciden por SHA-256 con el conjunto ya compilado en tres modos y validado por el usuario. No se repite compilación por cambios exclusivamente documentales. Examples permanece ignorada y fuera de los commits.
+
+## 2026-11-02 — Archify como diagrama lógico vigente
+
+- El usuario compara y aprueba la versión Archify; solicita sustituir el diagrama Mermaid .md, actualizar documentación y publicar en dev.
+- Se retira hardware/diagrama-bloques-rev-a.md y se incorpora diagrama-bloques-rev-a.html, versión 0.1.0, junto a su fuente diagrama-bloques-rev-a.archify.json. Se conservan los seis bloques y GPIO; CS microSD continúa en GPIO13. Las referencias del diagrama se fijan a la tabla del commit c46442f.
+- Regla expresa: actualizar únicamente por indicación del usuario y después de validar una nueva prueba. La validación no dispara regeneración automática. Cada publicación requiere autorización propia.
+- README, hardware/README, AGENTS, plan, seguimiento y fichas/enlaces se ajustan a Archify. Se documenta descarga/apertura local del HTML porque GitHub muestra código. Avisos y licencias del runtime conservados.
+- Archify 3.2.0: validación de esquema, entrega, comprobación del artefacto y navegador aprobadas, sin diagnósticos. Se conserva la disposición de la comparación aprobada. Recibos de trabajo fuera del repositorio. No se modifica ni recompila firmware.
+- Siguen pendientes consumo, alimentación conmutada y demás sensores. EasyEDA/esquemático/PCB se mantienen para el chat exclusivo posterior. examples/ y visor-gpio/ permanecen fuera de este incremento.

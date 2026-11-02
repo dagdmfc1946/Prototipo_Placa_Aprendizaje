@@ -19,15 +19,15 @@ Estado inicial: 2026-10-31. Este archivo es la lista de tareas del proyecto.
 - [x] Implementar y compilar P17b: CSV, cuatro intentos y deep sleep 60 s; conservar tres modos.
 - [x] Validar P17b físicamente: usuario confirma cinco ciclos, veinte filas, cabecera única, temporizador y plan de ausencia/recuperación completo (2026-11-02).
 - [x] Consolidar conexiones verificadas y diagrama lógico; CS MicroSD adoptado en GPIO13.
-- [ ] Completar verificación/validación de los demás sensores y actualizar tabla/bloques.
+- [ ] Completar verificación/validación de los demás sensores y actualizar la tabla; modificar Archify únicamente cuando el usuario lo indique después de validar la prueba.
 - [ ] Abordar esquemático/PCB en chat exclusivo después de validar todos los sensores; EasyEDA diferido.
 - [ ] Medir consumo del montaje; alimentación conmutada y optimización de sueño quedan para después.
 
 ## Prácticas
 
-Para cada práctica se crea una ficha en `docs/practicas/` al iniciarla. Ver resultados y dependencias en [plan](plan.md). Tamaño objetivo: componente, script, ficha y actualización de tabla/diagrama lógico. Por instrucción del usuario, esquema/PCB quedan para una etapa posterior en otro chat.
+Para cada práctica se crea una ficha en `docs/practicas/` al iniciarla. Ver resultados y dependencias en [plan](plan.md). Tamaño objetivo: componente, script, ficha y actualización de tabla; Archify solo por indicación expresa tras validar la prueba. Por instrucción del usuario, esquema/PCB quedan para una etapa posterior en otro chat.
 
-Marcar cada práctica tras identificación → conexión → script → compilación → prueba física → tabla/diagrama lógico → bitácora. El CAD ya no se exige para cerrar cada práctica individual: el usuario lo ha pospuesto expresamente hasta finalizar todos los sensores. No se eliminan las comprobaciones físicas.
+Marcar cada práctica tras identificación → conexión → script → compilación → prueba física → tabla → bitácora. Actualizar Archify solo por indicación expresa del usuario después de validar la nueva prueba. El CAD ya no se exige para cerrar cada práctica individual: el usuario lo ha pospuesto expresamente hasta finalizar todos los sensores. No se eliminan las comprobaciones físicas.
 
 - [ ] P00: inventario y entorno.
 - [x] P01: arranque y consola, probados con P17a/P11/P07/P17b.
@@ -85,3 +85,9 @@ El usuario autorizó completar las fases con documentación separada y revisará
 - [x] Usuario autoriza publicar la revisión de placa junto con el visor; incluida en `c4f1bca`.
 
 - [x] 2026-11-02: consolidar la única copia definitiva en `visor-gpio/`, respaldar copias anteriores fuera del repo y corregir enlaces locales.
+
+## Diagrama lógico vigente
+
+- [x] Adoptar Archify, conservar HTML y JSON editable, retirar Mermaid anterior y corregir documentación.
+- [x] Validar automáticamente el HTML con Archify, incluido navegador; publicación en dev autorizada el 2026-11-02.
+- [ ] Futuras revisiones: esperar indicación expresa del usuario después de validar una nueva prueba; no regenerar automáticamente.

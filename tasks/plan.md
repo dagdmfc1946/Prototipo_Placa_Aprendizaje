@@ -18,10 +18,10 @@ Para cada componente repetir esta secuencia:
 3. Preparar un script mínimo de ese componente con configuración centralizada. Compilar para la placa y versión del core registradas.
 4. El usuario conecta y prueba en protoboard. Registrar medidas, salida serie, condiciones y errores reales. La compilación no demuestra funcionamiento físico.
 5. Corregir y repetir hasta satisfacer los criterios de aceptación de esa práctica.
-6. Incorporar el bloque validado a la tabla de conexiones y al diagrama lógico, señalando pendientes eléctricos. El esquema CAD y PCB se posponen hasta terminar todos los sensores y se desarrollan en un chat exclusivo, según instrucción del usuario del 2026-11-02.
+6. Incorporar el bloque validado a la tabla de conexiones, señalando pendientes eléctricos. Actualizar Archify únicamente por indicación expresa del usuario después de validar la nueva prueba. El esquema CAD y PCB se posponen hasta terminar todos los sensores y se desarrollan en un chat exclusivo, según instrucción del usuario del 2026-11-02.
 7. Actualizar documentación, pinout provisional y bitácora. Revisar el resultado con el usuario antes de comenzar el siguiente componente.
 
-Cada práctica conserva un ejemplo reproducible. Los componentes se organizan en `.h`/`.cpp` y el `.ino` coordina la práctica seleccionada. La tabla y los bloques lógicos crecen con las validaciones; EasyEDA y el esquema se abordarán al terminar todos los sensores previstos en un chat exclusivo.
+Cada práctica conserva un ejemplo reproducible. Los componentes se organizan en `.h`/`.cpp` y el `.ino` coordina la práctica seleccionada. La tabla crece con las validaciones; el diagrama Archify solo cambia por indicación expresa del usuario después de validar una nueva prueba; EasyEDA y el esquema se abordarán al terminar todos los sensores previstos en un chat exclusivo.
 
 ## Situación conocida
 
@@ -68,7 +68,7 @@ Los identificadores de práctica se conservan aunque se ajuste su orden. Se pued
 | P18: GPS | Tramas válidas; distinguir recepción de datos de posición válida; prueba exterior | P01 y script/modelo disponibles |
 | P19: RS485 | Envío/recepción con segundo extremo, control de dirección y reinicio | P01 y transceptor/segundo extremo disponibles |
 
-En cada fila, el cierre de práctica incluye firmware, prueba física, tabla/diagrama lógico y bitácora; CAD es una etapa posterior separada. El orden no obliga a comprar todo ahora. Si falta un componente, se deja pendiente y se acuerda otra práctica disponible.
+En cada fila, el cierre de práctica incluye firmware, prueba física, tabla y bitácora; el diagrama Archify requiere indicación expresa del usuario tras validar la prueba; CAD es una etapa posterior separada. El orden no obliga a comprar todo ahora. Si falta un componente, se deja pendiente y se acuerda otra práctica disponible.
 
 ## Integración y evolución física
 
@@ -176,6 +176,10 @@ Usuario confirma todo el plan físico correcto: cinco ciclos normales y captura 
 
 ## Secuencia acordada para hardware — 2026-11-02
 
-El usuario limita el trabajo actual a [tabla de conexiones](../hardware/conexiones-rev-a.md) y [diagrama lógico](../hardware/diagrama-bloques-rev-a.md). MicroSD CS queda en GPIO13, no GPIO5; SPI restante 18/19/23, DHT DATA4 y OLED SDA21/SCL22. Se amplían estos documentos conforme se validen los demás componentes.
+El usuario limita el trabajo actual a [tabla de conexiones](../hardware/conexiones-rev-a.md) y [diagrama lógico](../hardware/diagrama-bloques-rev-a.html). MicroSD CS queda en GPIO13, no GPIO5; SPI restante 18/19/23, DHT DATA4 y OLED SDA21/SCL22. La tabla se amplía conforme se validen los demás componentes; Archify solo se actualiza cuando el usuario lo indica expresamente después de validar la nueva prueba.
 
 EasyEDA, diseño de esquemático y PCB quedan para el final de la verificación/validación de todos los sensores previstos, en un chat exclusivo. Esta instrucción posterior sustituye recomendaciones anteriores de empezar la captura CAD ahora. La medición de consumo y la alimentación conmutada también quedan pendientes; no bloquean la publicación del firmware funcional ya validado, autorizada expresamente por el usuario en este turno.
+
+## Adopción de Archify — 2026-11-02
+
+El diagrama vigente es el HTML de Archify, con su fuente JSON editable. Solo actualizarlo por indicación expresa del usuario y después de validar una nueva prueba; la validación no autoriza por sí sola regenerarlo. Publicar requiere autorización expresa para cada incremento. El HTML reemplaza al diagrama Mermaid anterior, que se retira; conservar el JSON editable. Ver [uso, revisión y regeneración](../hardware/README.md).

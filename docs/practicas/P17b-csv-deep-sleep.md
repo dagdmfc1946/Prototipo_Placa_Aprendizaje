@@ -148,3 +148,7 @@ El incremento de ciclo y la causa temporizador confirman la secuencia de despert
 La captura muestra las filas completas en una sola columna porque no se está aplicando la coma como delimitador. Importar el archivo indicando coma como separador; si hace falta interpretar columnas numéricas, usar una configuración que reconozca el punto decimal. Conservar el CSV original y guardar el análisis en otra copia, preferiblemente un libro `.xlsx`: cambiar cabecera, delimitador, codificación o finales de línea puede hacer que el registrador rechace el archivo en el próximo arranque. No es necesario modificar firmware para visualizar sus columnas.
 
 Conexiones y diagrama lógico consolidados en hardware/. Por instrucción posterior del usuario, EasyEDA/esquemático/PCB se harán en chat exclusivo al finalizar todos los sensores. Consumo y alimentación conmutada siguen diferidos. El reporte inicial no autorizaba publicar; el usuario autorizó después la publicación actual el 2026-11-02.
+
+### Diagrama vigente
+
+La representación funcional de esta práctica se consulta en el [HTML Archify](../../hardware/diagrama-bloques-rev-a.html). Sustituye al Mermaid anterior, conservando los bloques y GPIO validados. Solo se actualizará por indicación expresa del usuario después de validar una nueva prueba. Ver [instrucciones](../../hardware/README.md).

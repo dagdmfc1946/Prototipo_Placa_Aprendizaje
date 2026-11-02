@@ -1,6 +1,6 @@
 # Prototipo de placa de aprendizaje ESP32
 
-Desarrollo gradual de una plataforma educativa con ESP-WROOM-32 DevKit de 30 pines, Arduino IDE y periféricos. Se validará un componente por vez en protoboard y se actualizarán su tabla de conexiones y diagrama lógico. El esquemático, la baquela y la PCB se abordarán después de validar todos los componentes, con el diseño en un chat exclusivo.
+Desarrollo gradual de una plataforma educativa con ESP-WROOM-32 DevKit de 30 pines, Arduino IDE y periféricos. Se validará un componente por vez en protoboard y se actualizará su tabla de conexiones. El diagrama Archify solo se actualizará por indicación expresa del usuario, después de validar una nueva prueba. El esquemático, la baquela y la PCB se abordarán después de validar todos los componentes, con el diseño en un chat exclusivo.
 
 ## Estado
 
@@ -11,7 +11,7 @@ Práctica activa: **P17b, CSV y deep sleep**. Cuatro intentos de lectura a inter
 - [Prueba P17b: CSV y deep sleep](docs/practicas/P17b-csv-deep-sleep.md): cuatro muestras, CSV, sueño, selección y límites de consumo.
 - [Prueba P11/P07: DHT11 y OLED](docs/practicas/P11-P07-dht11-oled.md): selección, conexiones, librerías y casos de prueba validados por el usuario.
 - [Prueba P17a: MicroSD](docs/practicas/P17a-microsd.md): cableado, carga, resultados recibidos y verificación de compilación.
-- [Conexiones adoptadas](hardware/conexiones-rev-a.md) y [diagrama lógico](hardware/diagrama-bloques-rev-a.md): conjunto validado, CS MicroSD en GPIO13.
+- [Conexiones adoptadas](hardware/conexiones-rev-a.md) y [diagrama lógico interactivo Archify](hardware/diagrama-bloques-rev-a.html): conjunto validado, CS MicroSD en GPIO13.
 - [Plan de trabajo](tasks/plan.md): alcance, secuencia, pendientes y fuentes.
 - [Seguimiento](tasks/todo.md): prácticas y puntos de revisión.
 - [Bitácora](docs/bitacora.md): trabajo realizado y plantilla de registro.
@@ -19,9 +19,11 @@ Práctica activa: **P17b, CSV y deep sleep**. Cuatro intentos de lectura a inter
 - [Instrucciones de colaboración](AGENTS.md): uso de Agent Skills y criterios de validación.
 - [Archivos de firmware y versionado](docs/firmware-archivos-y-versionado.md): interacción `.ino`/`.h`/`.cpp`, cabecera y versiones por archivo.
 
+Para visualizar el HTML de Archify, abrir la copia local en un navegador o descargar el archivo desde GitHub y abrirlo; la vista de código de GitHub no ejecuta el diagrama. Su [fuente editable JSON](hardware/diagrama-bloques-rev-a.archify.json) y las instrucciones están en [hardware/](hardware/README.md).
+
 ## Forma de trabajo
 
-Identificar módulo → revisar ejemplo → preparar script → compilar → probar en protoboard → registrar resultados → actualizar tabla de conexiones y diagrama lógico → siguiente componente. EasyEDA, esquemático y PCB se harán en un chat exclusivo al terminar la validación de todos los sensores.
+Identificar módulo → revisar ejemplo → preparar script → compilar → probar en protoboard → registrar resultados → actualizar tabla de conexiones → actualizar Archify solo si el usuario lo indica tras validar la prueba → siguiente componente. EasyEDA, esquemático y PCB se harán en un chat exclusivo al terminar la validación de todos los sensores.
 
 Firmware dentro de `esp32_Project/`. Las fichas de prácticas y proyectos EDA se crearán cuando comience la etapa correspondiente. La futura integración de circuitos sin módulos es una revisión posterior.
 

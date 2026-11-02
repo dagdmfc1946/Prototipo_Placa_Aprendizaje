@@ -6,3 +6,7 @@
 *.map
 .env
 .env.*
+
+# Metadatos locales de entrega Archify; el HTML y su fuente JSON sí se publican.
+/hardware/*.delivery.json
+/hardware/*.delivery-pending.json
